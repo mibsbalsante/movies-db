@@ -12,8 +12,10 @@
     "postinstall": "ln -sf $(pwd)/.hooks/* $(pwd)/.git/hooks/; exit 0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
@@ -25,6 +27,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react": "^7.32.2",
     "prettier": "^2.8.4",
+    "sass": "^1.58.3",
     "vite": "^4.1.0"
   },
   "config": {
