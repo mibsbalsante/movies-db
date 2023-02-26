@@ -6,13 +6,18 @@ import { updateMovies } from "@str/movieSlice"
 
 const useMovieData = name => {
   const dispatch = useDispatch()
-  const { data: movie, error } = useGetMovieByTitleQuery(name)
+  const {
+    data: movie,
+    error,
+    isLoading,
+    isFetching,
+  } = useGetMovieByTitleQuery(name)
 
   useEffect(() => {
     movie && dispatch(updateMovies(movie))
   }, [movie])
 
-  return { movie, error }
+  return { movie, error, isLoading: isLoading || isFetching }
 }
 
 export default useMovieData

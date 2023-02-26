@@ -13,7 +13,7 @@ const moviesBaseQuery = async (title, api, extraOptions) => {
     Title?.toLowerCase().includes(title)
   )
 
-  if (localResult) return localResult
+  if (localResult) return Promise.resolve({ data: localResult })
 
   const result = await fetchBaseQuery({
     baseUrl: apiURL,
