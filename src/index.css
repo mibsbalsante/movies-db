@@ -32,6 +32,9 @@ input:focus-visible {
   --max-width: 1280px;
   --container-width: 90%;
   --header-height: 60px;
+
+  --color-primary: var(--sapBrandColor);
+  --color-secondary: var(--sapBrandColor);
   /* -- */
 
   color: var(--color-text);
@@ -48,7 +51,6 @@ body {
     --color-bg: var(--sapBackgroundColor);
     --color-bg-helper: var(--sapBaseColor);
     --color-text: var(--sapUiBaseText);
-    --color-primary: var(--sapBrandColor);
   }
 }
 
@@ -58,6 +60,5 @@ body {
     --color-bg: var(--sapUiBaseText);
     --color-bg-helper: var(--sapUiShellColor);
     --color-text: var(--sapBaseColor);
-    --color-primary: var(--sapBrandColor);
   }
 }

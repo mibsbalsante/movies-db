@@ -1,0 +1,27 @@
+.ratings {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 320px;
+  gap: 12px;
+
+  &Line {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &Indicator {
+    margin: 0 0 4px;
+  }
+
+  &List {
+    margin-top: 12px;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
+}
