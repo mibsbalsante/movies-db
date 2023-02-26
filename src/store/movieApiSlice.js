@@ -15,9 +15,13 @@ const moviesBaseQuery = async (title, api, extraOptions) => {
 
   if (localResult) return localResult
 
-  return await fetchBaseQuery({
+  const result = await fetchBaseQuery({
     baseUrl: apiURL,
   })(query, api, extraOptions)
+
+  if (result?.data?.Error) return Promise.reject(result.data.Error)
+
+  return result
 }
 
 export const movieApi = createApi({
