@@ -29,15 +29,9 @@ input:focus-visible {
   -webkit-text-size-adjust: 100%;
 
   /* global vars */
-  --color-white: #fff;
-
-  --color-gray-1: #e6edf3;
-  --color-gray-2: #464a4e;
-  --color-gray-3: #2e3236;
-  --color-gray-4: #242424;
-
   --max-width: 1280px;
   --container-width: 90%;
+  --header-height: 60px;
   /* -- */
 
   color: var(--color-text);
@@ -51,21 +45,19 @@ body {
 @media (prefers-color-scheme: light) {
   :root {
     /* scheme vars */
-    --color-bg: var(--color-white);
-    --color-bg-helper: var(--color-gray-1);
-    --color-text: var(--color-gray-3);
-    --color-highlight: var(--color-gray-2);
-    --color-heading: var(--color-gray-4);
+    --color-bg: var(--sapBackgroundColor);
+    --color-bg-helper: var(--sapBaseColor);
+    --color-text: var(--sapUiBaseText);
+    --color-primary: var(--sapBrandColor);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* scheme vars */
-    --color-bg: var(--color-gray-4);
-    --color-bg-helper: var(--color-gray-3);
-    --color-text: var(--color-gray-1);
-    --color-highlight: var(--color-gray-1);
-    --color-heading: var(--color-white);
+    --color-bg: var(--sapUiBaseText);
+    --color-bg-helper: var(--sapUiShellColor);
+    --color-text: var(--sapBaseColor);
+    --color-primary: var(--sapBrandColor);
   }
 }
