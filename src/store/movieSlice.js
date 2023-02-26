@@ -8,8 +8,14 @@ export const movieSlice = createSlice({
   },
   reducers: {
     updateMovies: (state, action) => {
-      state.moviesList.push(action.payload)
       state.data = action.payload
+
+      const alreadyExists = state.moviesList.find(
+        ({ imdbID }) => imdbID === action.payload.imdbID
+      )
+      if (alreadyExists) return
+
+      state.moviesList.push(action.payload)
     },
   },
 })
