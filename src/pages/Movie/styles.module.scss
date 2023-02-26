@@ -1,0 +1,78 @@
+.movie {
+  @include page-container;
+
+  gap: 32px;
+
+  & &Text {
+    display: block;
+  }
+
+  &Heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &Info {
+    gap: 6px;
+    text-transform: capitalize;
+
+    // needed to override ui5 "display: inline-block"
+    &#{&} {
+      display: flex;
+      font-weight: 600;
+    }
+
+    span:nth-child(n + 2) {
+      position: relative;
+
+      &::before {
+        content: "\2022";
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &Year {
+    padding: 4px 16px;
+    border-radius: 100px;
+    background-color: var(--color-secondary);
+    color: var(--sapBaseColor);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-right: auto;
+  }
+
+  &Main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 32px 24px;
+  }
+
+  &Reception {
+    text-align: right;
+    height: fit-content;
+
+    @include box;
+  }
+
+  &Section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include box;
+  }
+
+  &Poster {
+    max-width: 480px;
+  }
+
+  &List {
+    margin: 0;
+    padding-left: 24px;
+  }
+}
