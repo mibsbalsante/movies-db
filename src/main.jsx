@@ -9,7 +9,12 @@ import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme"
 import "@ui5/webcomponents/dist/features/InputElementsFormSupport.js"
 import "@ui5/webcomponents-react/dist/Assets"
 
-setTheme("sap_horizon")
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+  setTheme("sap_horizon_dark")
+} else setTheme("sap_horizon")
 
 import router from "./router"
 import store from "./store"
