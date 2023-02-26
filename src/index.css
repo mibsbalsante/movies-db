@@ -33,6 +33,10 @@ input:focus-visible {
   --container-width: 90%;
   --header-height: 60px;
 
+  --color-bg: var(--sapBackgroundColor);
+  --color-bg-helper: var(--sapBaseColor);
+  --color-text: var(--sapTextColor);
+
   --color-primary: var(--sapBrandColor);
   --color-secondary: var(--sapBrandColor);
   /* -- */
@@ -43,22 +47,4 @@ input:focus-visible {
 
 body {
   margin: 0;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    /* scheme vars */
-    --color-bg: var(--sapBackgroundColor);
-    --color-bg-helper: var(--sapBaseColor);
-    --color-text: var(--sapUiBaseText);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* scheme vars */
-    --color-bg: var(--sapUiBaseText);
-    --color-bg-helper: var(--sapUiShellColor);
-    --color-text: var(--sapBaseColor);
-  }
 }
