@@ -17,6 +17,7 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@ast": fileURLToPath(new URL("./src/assets", import.meta.url)),
       "@cmp": fileURLToPath(new URL("./src/components", import.meta.url)),
+      "@hks": fileURLToPath(new URL("./src/hooks", import.meta.url)),
       "@str": fileURLToPath(new URL("./src/store", import.meta.url)),
       "@utl": fileURLToPath(new URL("./src/utils", import.meta.url)),
     },
