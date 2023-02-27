@@ -5,9 +5,9 @@ import styles from "./styles.module.scss"
 
 const imdbURL = import.meta.env.VITE_IMDB_URL
 
-const Rating = ({ imdbID, imdbRating, Metascore, Ratings }) => {
+const Rating = ({ imdbID, imdbRating, Metascore, Ratings, className }) => {
   return (
-    <div className={styles.ratings}>
+    <div className={`${styles.ratings} ${className}`}>
       <div className={styles.ratingsLine}>
         <Link design="Emphasized" href={`${imdbURL}/${imdbID}`} target="_blank">
           IMDb
@@ -34,13 +34,15 @@ const Rating = ({ imdbID, imdbRating, Metascore, Ratings }) => {
         />
       </div>
 
-      <Tree className={styles.ratingsList}>
-        <TreeItem text="All Ratings" icon="favorite">
-          {Ratings.map(({ Source, Value }) => (
-            <TreeItem key={Source} text={`${Source}: ${Value}`} />
-          ))}
-        </TreeItem>
-      </Tree>
+      {Ratings.length > 0 && (
+        <Tree className={styles.ratingsList}>
+          <TreeItem text="All Ratings" icon="favorite">
+            {Ratings.map(({ Source, Value }) => (
+              <TreeItem key={Source} text={`${Source}: ${Value}`} />
+            ))}
+          </TreeItem>
+        </Tree>
+      )}
     </div>
   )
 }
@@ -55,6 +57,7 @@ Rating.propTypes = {
       Value: PropTypes.string,
     })
   ),
+  className: PropTypes.string,
 }
 
 export default Rating

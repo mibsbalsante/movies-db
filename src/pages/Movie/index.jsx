@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { Loader, Title, Text, List } from "@ui5/webcomponents-react"
+import { Loader, Title, Text, List, Icon } from "@ui5/webcomponents-react"
 
 import useMovieData from "@hks/useMovieData"
 import usePageTitle from "@hks/usePageTitle"
@@ -7,6 +7,8 @@ import Rating from "@cmp/Rating"
 import ListItem from "@cmp/ListItem"
 
 import styles from "./styles.module.scss"
+
+const isEmpty = val => !val || val === "N/A"
 
 const Movie = () => {
   const { name } = useParams()
@@ -34,10 +36,22 @@ const Movie = () => {
         </div>
 
         <main className={styles.movieMain}>
-          <img className={styles.moviePoster} src={movie.Poster} alt="" />
-          <div className={styles.movieReception}>
-            <Rating {...movie} />
+          <div className={styles.moviePoster}>
+            {!isEmpty(movie.Poster) ? (
+              <img
+                className={styles.moviePosterImg}
+                src={movie.Poster}
+                alt=""
+              />
+            ) : (
+              <Icon
+                className={styles.moviePosterIcon}
+                name="error"
+                design="NonInteractive"
+              />
+            )}
           </div>
+          <Rating {...movie} className={styles.movieReception} />
         </main>
 
         <section className={styles.movieSection}>

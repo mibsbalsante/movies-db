@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-end;
-  min-width: 320px;
+  width: 100%;
+  max-width: 320px;
   gap: 12px;
 
   &Line {
@@ -23,5 +24,6 @@
 
   @media (max-width: 768px) {
     align-items: flex-start;
+    max-width: 100%;
   }
 }
