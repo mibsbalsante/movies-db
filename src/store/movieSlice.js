@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+import { getFromStorage, saveToStorage } from "@utl/storage"
+
 export const movieSlice = createSlice({
   name: "movie",
   initialState: {
-    moviesList: [],
+    moviesList: getFromStorage("movies") || [],
     data: null,
   },
   reducers: {
@@ -16,6 +18,8 @@ export const movieSlice = createSlice({
       if (alreadyExists) return
 
       state.moviesList.push(action.payload)
+
+      saveToStorage("movies", state.moviesList)
     },
   },
 })
