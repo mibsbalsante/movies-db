@@ -9,6 +9,11 @@ import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme"
 import "@ui5/webcomponents/dist/features/InputElementsFormSupport.js"
 import "@ui5/webcomponents-react/dist/Assets"
 
+// icons
+import "@ui5/webcomponents-icons/dist/favorite.js"
+import "@ui5/webcomponents-icons/dist/search.js"
+import "@ui5/webcomponents-icons/dist/error.js"
+
 if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
