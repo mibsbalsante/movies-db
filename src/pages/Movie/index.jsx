@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { Loader, Title, Text } from "@ui5/webcomponents-react"
+import { Loader, Title, Text, List } from "@ui5/webcomponents-react"
 
 import useMovieData from "@hks/useMovieData"
 import usePageTitle from "@hks/usePageTitle"
@@ -41,30 +41,41 @@ const Movie = () => {
         </main>
 
         <section className={styles.movieSection}>
-          <Title level="H3">Plot</Title>
-          <Text className={styles.movieText}>{movie.Plot}</Text>
+          <List
+            separators="Inner"
+            headerText="Plot"
+            className={styles.movieList}
+          >
+            <ListItem>{movie.Plot}</ListItem>
+          </List>
         </section>
 
         <section className={styles.movieSection}>
-          <Title level="H3">Credits</Title>
-          <ul className={styles.movieList}>
+          <List
+            separators="Inner"
+            headerText="Credits"
+            className={styles.movieList}
+          >
             <ListItem title="Production">{movie.Production}</ListItem>
-            <ListItem title="Writers"> {movie.Writer}</ListItem>
+            <ListItem title="Writers">{movie.Writer}</ListItem>
             <ListItem title="Directors">{movie.Director}</ListItem>
-            <ListItem title="Stars"> {movie.Actors}</ListItem>
-          </ul>
+            <ListItem title="Stars">{movie.Actors}</ListItem>
+          </List>
         </section>
 
         <section className={styles.movieSection}>
-          <Title level="H3">Details</Title>
-          <ul className={styles.movieList}>
-            <ListItem title="Release date"> {movie.Released}</ListItem>
-            <ListItem title="Genre"> {movie.Genre}</ListItem>
-            <ListItem title="Country"> {movie.Country}</ListItem>
-            <ListItem title="Language"> {movie.Language}</ListItem>
-            <ListItem title="Awards"> {movie.Awards}</ListItem>
-            <ListItem title="Box Office"> {movie.BoxOffice}</ListItem>
-          </ul>
+          <List
+            separators="Inner"
+            headerText="Details"
+            className={styles.movieList}
+          >
+            <ListItem title="Release date">{movie.Released}</ListItem>
+            <ListItem title="Genre">{movie.Genre}</ListItem>
+            <ListItem title="Country">{movie.Country}</ListItem>
+            <ListItem title="Language">{movie.Language}</ListItem>
+            <ListItem title="Awards">{movie.Awards}</ListItem>
+            <ListItem title="Box Office">{movie.BoxOffice}</ListItem>
+          </List>
         </section>
       </div>
     )

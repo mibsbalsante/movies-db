@@ -1,9 +1,29 @@
 .li {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  height: auto;
 
   & &Title {
     font-weight: 600;
+  }
+
+  /* increase li size on mobile to show the whole info */
+  &::part(native-li) {
+    /* TODO: check why --_ui5_list_item_base_height doesn't exist */
+    min-height: 42px;
+  }
+
+  /* bigger space for the texts */
+  &::part(title),
+  &::part(additional-text) {
+    max-width: 50%;
+  }
+
+  /* makes text wrap and its height gets bigger than 42px */
+  &::part(additional-text) {
+    white-space: break-spaces;
+  }
+
+  /* item without title (CustomListItem) */
+  &Custom {
+    padding: 0.5rem 1rem;
   }
 }
