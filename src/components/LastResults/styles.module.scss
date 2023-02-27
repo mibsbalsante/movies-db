@@ -1,0 +1,30 @@
+.nav {
+  @include box;
+
+  &List {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin-top: 12px;
+  }
+
+  &Link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    &::before {
+      content: "\2022";
+      margin-right: 6px;
+      color: var(--color-text);
+    }
+  }
+}
